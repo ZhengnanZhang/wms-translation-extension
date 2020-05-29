@@ -4,11 +4,11 @@
 # 快速开始
 ## 1 安装
 将wms-translation-extension-0.0.1.vsix安装
-![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/master/image/安装插件.jpg)
-![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/master/image/选取vsix文件.jpg)
+![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/blob/master/images/安装插件.jpg)
+![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/blob/master/images/选取vsix文件.jpg)
 ## 2 使用
 点击鼠标右键，选择generate key 就会生成json文件
-![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/master/image/如何使用.jpg)
+![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/blob/master/images/如何使用.jpg)
 
 ## 3 详述
 ### 3.1 鼠标右键增加选项
@@ -19,10 +19,10 @@
 ### 3.2.1 判断文件类型以及分析起止位
 我们先进行判断我们需要进行提取key值的文件是vue文件还是js文件，通过languageId这个参数我们可以进行判断。
 如果是vue文件，我们再进一步通过getRange函数来知道template和script的起止位置。
-![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/master/image/判断文件类型.jpg)
+![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/blob/master/images/判断文件类型.jpg)
 ### 3.2.2 去除注释
 在vue中的注释于js的注释不同，js中注释多行的时候，每一行前面都会有 `//` 符号，这样就比较容易匹配，我们只要通过正则然后利用test进行判断就可以。但是vue中多行注释是开头一个`<!==` 然后结尾`!==>`符号，中间部分的代码都是被注释的。所以这时候我们通过一个commentFlag的参数，来判断目前的代码行是否是注释的。
-![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/master/image/跳过注释.jpg)
+![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/blob/master/images/跳过注释.jpg)
 ### 3.3.3 正则匹配
 当代码行不是被注释的，我们利用正则将需要添加翻译的字段提取出来，`/(?<=(\$i18n|\$t)\()('|").*('|")/g`，这样就可以把代码中的$i18n('xxx')或者$t('xxx')中的内容提取出来。
 ### 3.3.4 生成json文件
