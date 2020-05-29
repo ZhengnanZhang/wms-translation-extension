@@ -5,9 +5,10 @@
 ## 1 安装
 将wms-translation-extension-0.0.1.vsix安装
 ![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/master/image/安装插件.jpg)
+![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/master/image/选取vsix文件.jpg)
 ## 2 使用
 点击鼠标右键，选择generate key 就会生成json文件
-![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/master/image/选取vsix文件.jpg)
+![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/master/image/如何使用.jpg)
 
 ## 3 详述
 ### 3.1 鼠标右键增加选项
