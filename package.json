@@ -1,0 +1,105 @@
+{
+	"name": "wms-translation-extension",
+	"displayName": "wms-translation-extension",
+	"description": "add key for wms",
+	"publisher": "zhengnan",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.45.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"activationEvents": [
+		"onCommand:extension.generateKeys"
+	],
+	"main": "./src/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.generateKeys",
+				"title": "Generate Keys"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "WMS-Translation-Extension",
+			"properties": {
+				"extension.defaultLocalesPath": {
+					"type": "string",
+					"default": "src/locales",
+					"description": "Specify the 'locales' folder path for wms-translation-extension. \n (expect 'string', default 'src/locales')"
+				},
+				"extension.langFile": {
+					"type": "string",
+					"default": "translationKeys.json",
+					"description": "file name for locales json'. \n (expect 'string', default translationKeys.json )"
+				}
+			}
+		},
+		"keybindings": [
+			{
+				"command": "extension.generateKeys",
+				"key": "ctrl+f10",
+				"mac": "cmd+f10",
+				"when": "editorTextFocus"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorFocus",
+					"command": "extension.generateKeys",
+					"group": "navigation"
+				}
+			]
+		},
+		"languages": [
+			{
+				"id": "vue",
+				"aliases": [
+					"Vue",
+					"vue"
+				],
+				"extensions": [
+					".vue"
+				],
+				"configuration": "./syntaxes/vue.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "vue",
+				"scopeName": "text.html.vue",
+				"path": "./syntaxes/vue.tmLanguage"
+			}
+		]
+	},
+	"scripts": {
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.45.0",
+		"eslint": "^6.6.0",
+		"flat": "^4.1.0",
+		"glob": "^7.1.5",
+		"mkdirp": "^0.5.1",
+		"mocha": "^6.2.2",
+		"sort-json": "^2.0.0",
+		"sort-package-json": "^1.40.0",
+		"typescript": "^3.6.4",
+		"unflatten": "^1.0.4",
+		"validator": "^12.1.0",
+		"vscode-test": "^1.2.2"
+	},
+	"dependencies": {
+		"flat": "^4.1.0",
+		"mkdirp": "^0.5.1",
+		"sort-json": "^2.0.0",
+		"sort-package-json": "^1.40.0",
+		"unflatten": "^1.0.4",
+		"validator": "^12.1.0"
+	}
+}
