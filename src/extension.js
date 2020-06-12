@@ -5,6 +5,7 @@ const generateKeys = require('./generateKeys')
 function activate (context) {
   // register
   // generate i18n json by regexp
+
   generateKeys(context)
 
   msg.info(`${plugin.name} 已激活！`)

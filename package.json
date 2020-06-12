@@ -75,8 +75,7 @@
 			}
 		]
 	},
-	"scripts": {
-	},
+	"scripts": {},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
 		"@types/mocha": "^5.2.7",
@@ -95,7 +94,9 @@
 		"vscode-test": "^1.2.2"
 	},
 	"dependencies": {
+		"axios": "^0.19.2",
 		"flat": "^4.1.0",
+		"form-data": "^3.0.0",
 		"mkdirp": "^0.5.1",
 		"sort-json": "^2.0.0",
 		"sort-package-json": "^1.40.0",
