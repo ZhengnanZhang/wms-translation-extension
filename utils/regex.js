@@ -2,7 +2,6 @@
 //欢迎使用JavaScript中的RegExp的众多陷阱之一，当flag 是global时，第二次使用它将会从第一次匹配到的lastIndex开始查。。。
 //所以只要是变量赋值多次使用的Regexp，都需要使用match，或者在使用完test,exec之后重置lastIndex
 
-//约定:所有汉字匹配均以汉字开头,所有正则针对 单行匹配
 const spaceRegexp = /\s/g;
 const firstSpaceRegexp = /\s+/;
 const quotationRegexp = /[\"|\']/g;
@@ -24,12 +23,6 @@ const commentRight = /(-->)$/g;
 //匹配js中的汉字,配合template range 判断 是否是template中的js汉字  √ (?<!=)["'][\u4e00-\u9fa5]\S*["|']
 const scriptRegexp = /(?<=(\$i18n|\$t)\()('|").*('|")/g
 // const scriptRegexp = /(?<!=)[\$18n]\S*/g
-
-//匹配属性中的汉字 √
-// const propertyRegexp = /\s\S+=["'][\u4e00-\u9fa5]\S*["']/g;
-
-// 单行  匹配 template ><下，空行的汉字（retrieve） ,
-// const angleBracketSpaceRegexp = /((?<=\s)[\u4e00-\u9fa5][^\s\<\>]*|(?<=[>\s])[\u4e00-\u9fa5][^\s\<\>|\n]*(?=[\s<]))/g;
 
 //匹配到特殊字符串说明前面正则匹配有问题，给出提示，去掉匹配
 const warnRegexp = /[{}<>:]/g;

@@ -6,6 +6,14 @@
 将wms-translation-extension-0.0.1.vsix安装
 ![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/master/image/安装插件.jpg)
 ![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/master/image/选取vsix文件.jpg)
+## 2 配置
+为了自动发送请求，所以我们需要配置一下资源ID以及每个人独立的Authorization Token
+找到Authorization Token
+![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/master/image/Authorization_Key.jpg)
+找到资源ID
+![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/master/image/ResourceID.jpg)
+配置
+![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/master/image/配置.jpg)
 ## 2 使用
 点击鼠标右键，选择generate key 就会生成json文件
 ![我是图片](https://github.com/ZhengnanZhang/wms-translation-extension/master/image/如何使用.jpg)
@@ -27,3 +35,6 @@
 当代码行不是被注释的，我们利用正则将需要添加翻译的字段提取出来，`/(?<=(\$i18n|\$t)\()('|").*('|")/g`，这样就可以把代码中的$i18n('xxx')或者$t('xxx')中的内容提取出来。
 ### 3.3.4 生成json文件
 当我们所有key值都提取出以后，我们将结果利用writeFile写入translationKeys.json文件中。
+
+## 4 注意
+此插件需要vscode版本为1.45.0以上

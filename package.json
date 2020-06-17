@@ -5,7 +5,7 @@
 	"publisher": "zhengnan",
 	"version": "0.0.1",
 	"engines": {
-		"vscode": "^1.45.0"
+		"vscode": "1.45.0"
 	},
 	"categories": [
 		"Programming Languages"
@@ -30,10 +30,20 @@
 					"default": "src/locales",
 					"description": "Specify the 'locales' folder path for wms-translation-extension. \n (expect 'string', default 'src/locales')"
 				},
+				"extension.token": {
+					"type": "string",
+					"default": "",
+					"description": "Transify Authorization token"
+				},
 				"extension.langFile": {
 					"type": "string",
 					"default": "translationKeys.json",
 					"description": "file name for locales json'. \n (expect 'string', default translationKeys.json )"
+				},
+				"extension.resource": {
+					"type": "number",
+					"default": "",
+					"description": "Transify resource number"
 				}
 			}
 		},
@@ -94,13 +104,13 @@
 		"vscode-test": "^1.2.2"
 	},
 	"dependencies": {
-		"axios": "^0.19.2",
+		"file": "^0.2.2",
 		"flat": "^4.1.0",
 		"form-data": "^3.0.0",
 		"mkdirp": "^0.5.1",
+		"request-promise": "^4.2.5",
 		"sort-json": "^2.0.0",
 		"sort-package-json": "^1.40.0",
-		"unflatten": "^1.0.4",
 		"validator": "^12.1.0"
 	}
 }
