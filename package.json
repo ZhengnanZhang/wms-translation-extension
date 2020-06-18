@@ -5,7 +5,7 @@
 	"publisher": "zhengnan",
 	"version": "0.0.1",
 	"engines": {
-		"vscode": "1.45.0"
+		"vscode": "^1.45.0"
 	},
 	"categories": [
 		"Programming Languages"
@@ -108,6 +108,7 @@
 		"flat": "^4.1.0",
 		"form-data": "^3.0.0",
 		"mkdirp": "^0.5.1",
+		"request": "^2.88.2",
 		"request-promise": "^4.2.5",
 		"sort-json": "^2.0.0",
 		"sort-package-json": "^1.40.0",
