@@ -11,7 +11,8 @@
 		"Programming Languages"
 	],
 	"activationEvents": [
-		"onCommand:extension.generateKeys"
+		"onCommand:extension.generateKeys",
+		"onCommand:extension.generateSnippets"
 	],
 	"main": "./src/extension.js",
 	"contributes": {
@@ -19,6 +20,10 @@
 			{
 				"command": "extension.generateKeys",
 				"title": "Generate Keys"
+			},
+			{
+				"command": "extension.generateSnippets",
+				"title": "Generate Snippets"
 			}
 		],
 		"configuration": {
@@ -40,6 +45,11 @@
 					"default": "translationKeys.json",
 					"description": "file name for locales json'. \n (expect 'string', default translationKeys.json )"
 				},
+				"extension.snippetsFile": {
+					"type": "string",
+					"default": "snippetsCode.json",
+					"description": "file name for locales json'. \n (expect 'string', default snippetsCode.json )"
+				},
 				"extension.resource": {
 					"type": "number",
 					"default": "",
@@ -53,6 +63,12 @@
 				"key": "ctrl+f10",
 				"mac": "cmd+f10",
 				"when": "editorTextFocus"
+			},
+			{
+				"command": "extension.generateSnippets",
+				"key": "ctrl+f11",
+				"mac": "cmd+f11",
+				"when": "editorTextFocus"
 			}
 		],
 		"menus": {
@@ -60,6 +76,11 @@
 				{
 					"when": "editorFocus",
 					"command": "extension.generateKeys",
+					"group": "navigation"
+				},
+				{
+					"when": "editorFocus",
+					"command": "extension.generateSnippets",
 					"group": "navigation"
 				}
 			]
@@ -82,6 +103,20 @@
 				"language": "vue",
 				"scopeName": "text.html.vue",
 				"path": "./syntaxes/vue.tmLanguage"
+			}
+		],
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets/javascript.json"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/typescript.json"
+			},
+			{
+				"language": "vue",
+				"path": "./snippets/vue.json"
 			}
 		]
 	},
@@ -112,6 +147,7 @@
 		"request-promise": "^4.2.5",
 		"sort-json": "^2.0.0",
 		"sort-package-json": "^1.40.0",
-		"validator": "^12.1.0"
+		"validator": "^12.1.0",
+		"vue-template-compiler": "^2.6.12"
 	}
 }

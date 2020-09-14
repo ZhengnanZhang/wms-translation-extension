@@ -177,7 +177,12 @@ const getLocales = ({
   const dirName = path.dirname(fsPath)
   if (fs.existsSync(path.join(dirName, pkgFileName))) {
     if (isGetRootPath) return dirName
-    const lang = getCustomSetting(path.join(dirName, pkgFileName), 'langFile') // default 'translationKeys.json'
+    let lang
+    if (defaultLocalesPath === 'defaultSnippetsPath') {
+      lang = getCustomSetting(path.join(dirName, pkgFileName), 'snippetsFile') // default 'snippetsFile.json'
+    } else {
+      lang = getCustomSetting(path.join(dirName, pkgFileName), 'langFile') // default 'translationKeys.json'
+    }
     const localesPath = getCustomSetting(
       path.join(dirName, pkgFileName),
       'defaultLocalesPath'
