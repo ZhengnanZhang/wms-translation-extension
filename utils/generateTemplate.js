@@ -7,6 +7,7 @@ const parseHtml = function (tagsTree) {
 const handleTagsTree = function (topTreeNode) {
   // 为每一个节点生成开始标签和结束标签
   generateTag(topTreeNode)
+  let bodyList = []
   const formatVue = createVue(topTreeNode, bodyList)
   formatVue['vue-template'].body.unshift(`<template>`)
   formatVue['vue-template'].body.push(`</template>`)
@@ -35,7 +36,6 @@ const generateTag = function (node) {
     })
   } else if (slots && slots.length) {
     slots.forEach(function (subNode) {
-      console.log('slots2', subNode)
       generateTag(subNode)
     })
   }
@@ -176,7 +176,6 @@ const generateEndTag = function (node) {
 //   return `${startTag}${childrenString}${endTag}`
 // }
 
-let bodyList = []
 const createVue = function (node, bodyList) {
   let nodeType = 'vue'
   let result

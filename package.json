@@ -126,6 +126,8 @@
 		"@types/mocha": "^5.2.7",
 		"@types/node": "^12.11.7",
 		"@types/vscode": "^1.45.0",
+		"babel-core": "^7.0.0-0",
+		"babel-preset-typescript-vue": "^1.1.1",
 		"eslint": "^6.6.0",
 		"flat": "^4.1.0",
 		"glob": "^7.1.5",
@@ -139,6 +141,10 @@
 		"vscode-test": "^1.2.2"
 	},
 	"dependencies": {
+		"@babel/plugin-transform-typescript": "^7.11.0",
+		"@babel/preset-env": "^7.11.5",
+		"@vue/cli-plugin-babel": "^4.5.6",
+		"babel-types": "^6.26.0",
 		"file": "^0.2.2",
 		"flat": "^4.1.0",
 		"form-data": "^3.0.0",
@@ -149,5 +155,8 @@
 		"sort-package-json": "^1.40.0",
 		"validator": "^12.1.0",
 		"vue-template-compiler": "^2.6.12"
-	}
+	},
+	"presets": [
+		"@babel/preset-typescript"
+	]
 }
