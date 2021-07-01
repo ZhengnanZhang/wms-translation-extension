@@ -12,7 +12,8 @@
 	],
 	"activationEvents": [
 		"onCommand:extension.generateKeys",
-		"onCommand:extension.generateSnippets"
+		"onCommand:extension.generateSnippets",
+		"onCommand:extension.generateEnums"
 	],
 	"main": "./src/extension.js",
 	"contributes": {
@@ -24,12 +25,21 @@
 			{
 				"command": "extension.generateSnippets",
 				"title": "Generate Snippets"
+			},
+			{
+				"command": "extension.generateEnums",
+				"title": "Generate Enums"
 			}
 		],
 		"configuration": {
 			"type": "object",
 			"title": "WMS-Translation-Extension",
 			"properties": {
+				"extension.enumApiUrl": {
+					"type": "string",
+					"default": "http://wms.test.shopeemobile.com/api/v2/apps/basic/system/domain/enums",
+					"description": "Please input your project's enums api(default: http://wms.test.shopeemobile.com/api/v2/apps/basic/system/domain/enums)"
+				},
 				"extension.defaultLocalesPath": {
 					"type": "string",
 					"default": "src/locales",
@@ -69,6 +79,12 @@
 				"key": "ctrl+f11",
 				"mac": "cmd+f11",
 				"when": "editorTextFocus"
+			},
+			{
+				"command": "extension.generateEnums",
+				"key": "ctrl+f12",
+				"mac": "cmd+f12",
+				"when": "editorTextFocus"
 			}
 		],
 		"menus": {
@@ -81,6 +97,11 @@
 				{
 					"when": "editorFocus",
 					"command": "extension.generateSnippets",
+					"group": "navigation"
+				},
+				{
+					"when": "editorFocus",
+					"command": "extension.generateEnums",
 					"group": "navigation"
 				}
 			]
@@ -144,6 +165,7 @@
 		"@babel/plugin-transform-typescript": "^7.11.0",
 		"@babel/preset-env": "^7.11.5",
 		"@vue/cli-plugin-babel": "^4.5.6",
+		"axios": "^0.21.1",
 		"babel-types": "^6.26.0",
 		"file": "^0.2.2",
 		"flat": "^4.1.0",

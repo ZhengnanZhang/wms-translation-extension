@@ -4,7 +4,7 @@ const constants = {
   // backgroundColor: '#115A1C'
   },
   errorStyle: { color: '#ffffff', backgroundColor: 'red' },
-  langArr: ['javascript', 'vue'],
+  langArr: ['javascript', 'vue', 'typescript'],
   operation: {
     generateKeys: {
       cmd: 'extension.generateKeys',
@@ -13,6 +13,10 @@ const constants = {
     generateSnippets: {
       cmd: 'extension.generateSnippets',
       title: 'Update Snippets'
+    },
+    generateEnums: {
+      cmd: 'extension.generateEnums',
+      title: 'Update Enums'
     }
   },
   plugin: {

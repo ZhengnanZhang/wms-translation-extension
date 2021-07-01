@@ -2,6 +2,7 @@ const { msg } = require('../utils/vs')
 const { plugin } = require('../utils/constant')
 const generateKeys = require('./generateKeys')
 const generateSnippets = require('./generateSnippets')
+const generateEnums = require('./generateEnums')
 
 function activate (context) {
   // register
@@ -9,6 +10,7 @@ function activate (context) {
 
   generateKeys(context)
   generateSnippets(context)
+  generateEnums(context)
 
   msg.info(`${plugin.name} 已激活！`)
 }

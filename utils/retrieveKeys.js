@@ -80,7 +80,6 @@ module.exports = (currentEditor) => {
         // const inAngleBracketSpacet = lineText.match(angleBracketSpaceRegexp)
         // const inProperty = lineText.match(propertyRegexp)
         let inTemplateScript = lineText.match(scriptRegexp)
-        console.log('in', inTemplateScript)
         if (inTemplateScript) {
           wordArr = getLineCnWord({
             lineText,
@@ -101,10 +100,8 @@ module.exports = (currentEditor) => {
     }
     if (wordArr.length > 0) {
       lines.push(...wordArr)
-      console.log('lines', lines)
     }
   }
   const result = getlinesObj(Array.from(new Set(lines)))
-  console.log('result', result)
   return result
 }
