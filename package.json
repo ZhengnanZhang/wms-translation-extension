@@ -1,8 +1,8 @@
 {
-	"name": "wms-translation-extension",
-	"displayName": "wms-translation-extension",
-	"description": "add key for wms",
-	"publisher": "zhengnan",
+	"name": "JsonToEnums",
+	"displayName": "JsonToEnums",
+	"description": "convert JSON to Typescript enums",
+	"publisher": "zhengnan.zhang",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.45.0"
@@ -11,21 +11,11 @@
 		"Programming Languages"
 	],
 	"activationEvents": [
-		"onCommand:extension.generateKeys",
-		"onCommand:extension.generateSnippets",
 		"onCommand:extension.generateEnums"
 	],
 	"main": "./src/extension.js",
 	"contributes": {
 		"commands": [
-			{
-				"command": "extension.generateKeys",
-				"title": "Generate Keys"
-			},
-			{
-				"command": "extension.generateSnippets",
-				"title": "Generate Snippets"
-			},
 			{
 				"command": "extension.generateEnums",
 				"title": "Generate Enums"
@@ -38,48 +28,16 @@
 				"extension.enumApiUrl": {
 					"type": "string",
 					"default": "http://wms.test.shopeemobile.com/api/v2/apps/basic/system/domain/enums",
-					"description": "Please input your project's enums api(default: http://wms.test.shopeemobile.com/api/v2/apps/basic/system/domain/enums)"
+					"description": "Please input your project's enums api(example: http://wms.test.shopeemobile.com/api/v2/apps/basic/system/domain/enums)"
 				},
-				"extension.defaultLocalesPath": {
-					"type": "string",
-					"default": "src/locales",
-					"description": "Specify the 'locales' folder path for wms-translation-extension. \n (expect 'string', default 'src/locales')"
-				},
-				"extension.token": {
-					"type": "string",
+				"extension.headers": {
+					"type": "object",
 					"default": "",
-					"description": "Transify Authorization token"
-				},
-				"extension.langFile": {
-					"type": "string",
-					"default": "translationKeys.json",
-					"description": "file name for locales json'. \n (expect 'string', default translationKeys.json )"
-				},
-				"extension.snippetsFile": {
-					"type": "string",
-					"default": "snippetsCode.json",
-					"description": "file name for locales json'. \n (expect 'string', default snippetsCode.json )"
-				},
-				"extension.resource": {
-					"type": "number",
-					"default": "",
-					"description": "Transify resource number"
+					"description": "{csrftoken: xxx, token: xxx}"
 				}
 			}
 		},
 		"keybindings": [
-			{
-				"command": "extension.generateKeys",
-				"key": "ctrl+f10",
-				"mac": "cmd+f10",
-				"when": "editorTextFocus"
-			},
-			{
-				"command": "extension.generateSnippets",
-				"key": "ctrl+f11",
-				"mac": "cmd+f11",
-				"when": "editorTextFocus"
-			},
 			{
 				"command": "extension.generateEnums",
 				"key": "ctrl+f12",
@@ -89,16 +47,6 @@
 		],
 		"menus": {
 			"editor/context": [
-				{
-					"when": "editorFocus",
-					"command": "extension.generateKeys",
-					"group": "navigation"
-				},
-				{
-					"when": "editorFocus",
-					"command": "extension.generateSnippets",
-					"group": "navigation"
-				},
 				{
 					"when": "editorFocus",
 					"command": "extension.generateEnums",

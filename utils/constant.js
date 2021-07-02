@@ -20,7 +20,7 @@ const constants = {
     }
   },
   plugin: {
-    name: 'wms-translation-extension',
+    name: 'JSON To Enums',
     congratulations:
         'Congratulations, your extension "wms-translation-extension" is now active!',
     noUri: 'please selected a json file first'
