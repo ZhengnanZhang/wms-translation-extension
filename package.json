@@ -10,6 +10,7 @@
 	"categories": [
 		"Programming Languages"
 	],
+	"icon": "images/crown.png",
 	"activationEvents": [
 		"onCommand:extension.generateEnums"
 	],
