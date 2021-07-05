@@ -28,8 +28,8 @@
 			"properties": {
 				"extension.enumApiUrl": {
 					"type": "string",
-					"default": "http://wms.test.shopeemobile.com/api/v2/apps/basic/system/domain/enums",
-					"description": "Please input your project's enums api(example: http://wms.test.shopeemobile.com/api/v2/apps/basic/system/domain/enums)"
+					"default": "",
+					"description": "Please input your project's enums api(example: http://xxx.com/api/apps/xxx/enums)"
 				},
 				"extension.headers": {
 					"type": "object",
