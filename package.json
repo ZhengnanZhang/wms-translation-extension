@@ -3,7 +3,7 @@
 	"displayName": "JsonToEnums",
 	"description": "convert JSON to Typescript enums",
 	"publisher": "zhengnanzhang",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.45.0"
 	},
